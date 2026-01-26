@@ -1,7 +1,7 @@
-import random
+import first_deal
 # genenerate deck
 
-cards =  [11,2,3,4,5,6,7,8,9,10,10,10,10]
+# cards =  [11,2,3,4,5,6,7,8,9,10,10,10,10]
 
 # generate variables to be populated
 
@@ -11,13 +11,9 @@ dealer_hand = []
 player_score = []
 dealer_score = []
 
-# del first 2 cards
-iterator = 0
+# deal first 2 cards
 
-while iterator < 2:
-    player_hand.append(cards[random.randint(0,len(cards)-1)])
-    dealer_hand.append(cards[random.randint(0,len(cards)-1)]) 
-    iterator += 1
+first_deal.first_deal(player_hand=player_hand, dealer_hand=dealer_hand)
 
 player_score = sum(player_hand)
 dealer_score = sum(dealer_hand)
