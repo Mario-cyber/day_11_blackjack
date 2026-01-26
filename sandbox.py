@@ -10,22 +10,22 @@ cards =  [11,2,3,4,5,6,7,8,9,10,10,10,10]
 player_hand = []
 dealer_hand = []
 
-player_score = []
-dealer_score = []
+player_score = 0
+dealer_score = 0
 
 counter = 0
 
 def first_deal(player_hand, dealer_hand,player_score, dealer_score):
      iterator = 0 
-
+    
      while iterator < 2:
      
         player_hand.append(cards[random.randint(0,len(cards)-1)])
-        dealer_hand.append(cards[random.randint(0,len(cards)-1)]) 
+        dealer_hand.append(cards[random.randint(0,len(cards)-1)])
+        
 
         iterator += 1
 
-        
 
 
 # del first 2 cards
