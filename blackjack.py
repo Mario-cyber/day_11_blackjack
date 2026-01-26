@@ -21,14 +21,15 @@ dealer_score = sum(dealer_hand)
 print(player_hand, player_score)
 print(dealer_hand, dealer_score)
 
-
-
-
-    
+# check for blackjack
 
 if dealer_score == 21 :
     print("you lose")
 elif player_score == 21 :
     print("you win")
 
+# continue game logic
+
+if dealer_score < 21 and player_score < 21:
+    print("game continues")
 
