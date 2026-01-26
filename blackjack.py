@@ -11,12 +11,12 @@ dealer_hand = []
 player_score = []
 dealer_score = []
 
-
+# del first 2 cards
 iterator = 0
 
 while iterator < 2:
-    player_hand.append(cards[random.randint(0,len(cards))])
-    dealer_hand.append(cards[random.randint(0,len(cards))]) 
+    player_hand.append(cards[random.randint(0,len(cards)-1)])
+    dealer_hand.append(cards[random.randint(0,len(cards)-1)]) 
     iterator += 1
 
 player_score = sum(player_hand)
@@ -24,3 +24,15 @@ dealer_score = sum(dealer_hand)
 
 print(player_hand, player_score)
 print(dealer_hand, dealer_score)
+
+
+
+
+    
+
+if dealer_score == 21 :
+    print("you lose")
+elif player_score == 21 :
+    print("you win")
+
+
