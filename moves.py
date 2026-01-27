@@ -27,3 +27,4 @@ def calculate_score(hand):
 def check_for_bust (score):
      if score > 21:
           print("you lose")
+          continue_playing  = False
