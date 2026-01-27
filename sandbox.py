@@ -1,7 +1,7 @@
 # sanbox to play around 
 
 import random
-import first_deal
+import moves
 # genenerate deck
 
 cards =  [11,2,3,4,5,6,7,8,9,10,10,10,10]
@@ -33,7 +33,7 @@ counter = 0
 
 while player_score != 21 :
     
-    first_deal.first_deal(player_hand=player_hand, dealer_hand=dealer_hand)
+    moves.first_deal(player_hand=player_hand, dealer_hand=dealer_hand)
    
     player_score = sum(player_hand)
     dealer_score = sum(dealer_hand)

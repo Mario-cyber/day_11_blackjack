@@ -18,3 +18,12 @@ def hit(hand):
     hand.append(cards[random.randint(0,len(cards)-1)])
     return hand
     
+
+def calculate_score(hand):
+      score = sum(hand)
+      return score
+
+
+def check_for_bust (score):
+     if score > 21:
+          print("you lose")
