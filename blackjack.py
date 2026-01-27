@@ -38,8 +38,9 @@ while continue_playing == True:
         # deal another card to player 
         moves.hit(hand=player_hand)
         player_score = sum(player_hand)
-        moves.check_for_bust(score=player_score)
         print(player_hand, player_score)
+        continue_playing = moves.check_for_bust(score=player_score)
+        
         
     elif another_card == 'n':
         print(player_hand, player_score)
