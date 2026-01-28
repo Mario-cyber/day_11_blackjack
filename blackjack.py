@@ -53,3 +53,7 @@ while dealer_score < 17:
     dealer_score = sum(dealer_hand)
     print(dealer_hand,dealer_score)
     moves.check_for_bust(score = dealer_score)
+
+if player_score == dealer_score :
+    print("it's a push")
+    continue_playing = False
