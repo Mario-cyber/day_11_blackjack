@@ -22,14 +22,15 @@ print(dealer_hand, dealer_score)
 # it could be the case that both player and dealer hit blackjack in the first deal. That's a push. 
 # check for dealer blackjack first if the dealer is under 
 
+continue_playing =  True
+
 if dealer_score == 21 :
     print("you lose")
 elif player_score == 21 :
     print("you win")
+    continue_playing = False
 
-# continue game logic
 
-continue_playing =  True
 
 while continue_playing == True:
     another_card = input("do you want another card? y/n: ")
@@ -46,4 +47,9 @@ while continue_playing == True:
         print(player_hand, player_score)
         continue_playing  = False
 
-
+while dealer_score < 17:
+    #deal another card to dealer
+    moves.hit(hand = dealer_hand)
+    dealer_score = sum(dealer_hand)
+    print(dealer_hand,dealer_score)
+    moves.check_for_bust(score = dealer_score)

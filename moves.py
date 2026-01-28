@@ -1,6 +1,8 @@
 import random
 cards =  [11,2,3,4,5,6,7,8,9,10,10,10,10]
 
+# generate variables to be populated
+
 def first_deal(player_hand, dealer_hand):
      iterator = 0 
     
@@ -24,7 +26,9 @@ def calculate_score(hand):
       return score
 
 
+# fix this function so it works for both dealer and player 
 def check_for_bust (score):
+    
      if score > 21:
           print(f"you went over 21 you lose")
           return False
