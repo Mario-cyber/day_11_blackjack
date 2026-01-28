@@ -26,6 +26,7 @@ continue_playing =  True
 
 if dealer_score == 21 :
     print("you lose")
+    ontinue_playing = False
 elif player_score == 21 :
     print("you win")
     continue_playing = False
@@ -41,6 +42,8 @@ while continue_playing == True:
         player_score = sum(player_hand)
         print(player_hand, player_score)
         continue_playing = moves.check_for_bust(score=player_score)
+        if player_score == 21:
+            print("you win, player!")
         
         
     elif another_card == 'n':
@@ -54,6 +57,11 @@ while dealer_score < 17:
     print(dealer_hand,dealer_score)
     moves.check_for_bust(score = dealer_score)
 
-if player_score == dealer_score :
+
+if player_score > dealer_score:
+    print("you win, player!")
+elif player_score < dealer_score:
+    print("you lose player")
+elif player_score == dealer_score :
     print("it's a push")
-    continue_playing = False
+    # continue_playing = False
