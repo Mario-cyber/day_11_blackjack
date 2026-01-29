@@ -3,6 +3,8 @@ cards =  [11,2,3,4,5,6,7,8,9,10,10,10,10]
 
 # generate variables to be populated
 
+
+
 def first_deal(player_hand, dealer_hand):
      iterator = 0 
     
@@ -28,6 +30,11 @@ def calculate_score(hand):
 # maybe do a function that allows the Ace to be 11 or 1...
 """ put a library in the "cards" and if sum > 21 and 11 in set:
 replace 11 with the 1 by searching for the value using the key """
+
+def ace_function(hand): 
+     if sum(hand) > 21 and 11 in hand:
+          hand[11] = 1 
+     
 
 
 # fix this function so it works for both dealer and player 
