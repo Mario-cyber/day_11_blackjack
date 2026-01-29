@@ -12,6 +12,8 @@ dealer_score = []
 
 moves.first_deal(player_hand=player_hand, dealer_hand=dealer_hand)
 
+player_hand =[11,9]
+
 player_score = sum(player_hand)
 dealer_score = sum(dealer_hand)
 
@@ -42,7 +44,7 @@ while continue_playing == True:
     if another_card == 'y':
         # deal another card to player 
         moves.hit(hand=player_hand)
-        player_score = sum(player_hand)
+        player_score = moves.calculate_score(hand = player_hand)
         print(player_hand, player_score)
         continue_playing = moves.check_for_bust(score=player_score)
         if player_score == 21:
@@ -54,21 +56,23 @@ while continue_playing == True:
         continue_playing  = False
 
 
-while dealer_score < 17:
-    #deal another card to dealer
-    moves.hit(hand = dealer_hand)
-    dealer_score = sum(dealer_hand)
-    print(dealer_hand,dealer_score)
-    moves.check_for_bust(score = dealer_score)
+    while dealer_score < 17:
+        #deal another card to dealer
+        moves.hit(hand = dealer_hand)
+        dealer_score = moves.calculate_score(hand=dealer_hand) 
+        print(dealer_hand,dealer_score)
+        moves.check_for_bust(score = dealer_score)
 
-
-if player_score > dealer_score:
-    print("you win, player!")
-elif player_score < dealer_score:
-    print("you lose player")
-elif player_score == dealer_score :
-    print("it's a push")
-    # continue_playing = False
+# this part needs fine tuninng 
+    if player_score > dealer_score:
+        print("you win, player!")
+        continue_playing = False
+    elif player_score < dealer_score:
+        print("you lose player")
+        continue_playing = False
+    elif player_score == dealer_score :
+        print("it's a push")
+        continue_playing = False
 
 #remainig To Do's: 
 # make sure than an Ace counts as 11 or 1 depending on the situation 

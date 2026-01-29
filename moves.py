@@ -22,19 +22,14 @@ def hit(hand):
     hand.append(cards[random.randint(0,len(cards)-1)])
     return hand
     
+# calculates score and replaces ace from 11 to 1 if score is > 21 
 
 def calculate_score(hand):
       score = sum(hand)
+      if score > 21 and 11 in hand:
+          hand[hand.index(11)] = 1 
+      score = sum(hand)
       return score
-
-# maybe do a function that allows the Ace to be 11 or 1...
-""" put a library in the "cards" and if sum > 21 and 11 in set:
-replace 11 with the 1 by searching for the value using the key """
-
-def ace_function(hand): 
-     if sum(hand) > 21 and 11 in hand:
-          hand[11] = 1 
-     
 
 
 # fix this function so it works for both dealer and player 
