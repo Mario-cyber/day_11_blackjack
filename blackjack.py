@@ -50,6 +50,7 @@ while continue_playing == True:
         print(player_hand, player_score)
         continue_playing  = False
 
+
 while dealer_score < 17:
     #deal another card to dealer
     moves.hit(hand = dealer_hand)
@@ -65,3 +66,8 @@ elif player_score < dealer_score:
 elif player_score == dealer_score :
     print("it's a push")
     # continue_playing = False
+
+#remainig To Do's: 
+# make sure than an Ace counts as 11 or 1 depending on the situation 
+#display only one of the dealers hands at the begining of the game 
+#fix check for bust option so that the right message is displayed
