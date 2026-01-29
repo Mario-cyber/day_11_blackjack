@@ -25,6 +25,10 @@ def calculate_score(hand):
       score = sum(hand)
       return score
 
+# maybe do a function that allows the Ace to be 11 or 1...
+""" put a library in the "cards" and if sum > 21 and 11 in set:
+replace 11 with the 1 by searching for the value using the key """
+
 
 # fix this function so it works for both dealer and player 
 def check_for_bust (score):

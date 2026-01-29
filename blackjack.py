@@ -16,6 +16,9 @@ player_score = sum(player_hand)
 dealer_score = sum(dealer_hand)
 
 print(player_hand, player_score)
+
+# after funcionality is done, fix this display to only one card
+# print(dealer_hand[0])
 print(dealer_hand, dealer_score)
 
 # check for blackjack
