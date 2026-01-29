@@ -27,9 +27,10 @@ print(dealer_hand, dealer_score)
 
 continue_playing =  True
 
+# you will have to fix this later to give the dealer or player a chance to "push"
 if dealer_score == 21 :
     print("you lose")
-    ontinue_playing = False
+    continue_playing = False
 elif player_score == 21 :
     print("you win")
     continue_playing = False
@@ -44,7 +45,7 @@ while continue_playing == True:
         moves.hit(hand=player_hand)
         player_score = moves.calculate_score(hand = player_hand)
         print(player_hand, player_score)
-        continue_playing = moves.check_for_bust(score=player_score)
+        continue_playing = moves.check_for_bust_player(score=player_score)
         if player_score == 21:
             print("you win, player!")
         
@@ -54,23 +55,25 @@ while continue_playing == True:
         continue_playing  = False
 
 
+#gotta split the loop here, otherwise, if the player busts, the dealer can still play 
+
     while dealer_score < 17:
         #deal another card to dealer
         moves.hit(hand = dealer_hand)
         dealer_score = moves.calculate_score(hand=dealer_hand) 
         print(dealer_hand,dealer_score)
-        moves.check_for_bust(score = dealer_score)
+        continue_playing = moves.check_for_bust_dealer(score = dealer_score)
 
 # this part needs fine tuninng 
-    if player_score > dealer_score:
-        print("you win, player!")
-        continue_playing = False
-    elif player_score < dealer_score:
-        print("you lose player")
-        continue_playing = False
-    elif player_score == dealer_score :
-        print("it's a push")
-        continue_playing = False
+    # if player_score > dealer_score:
+    #     print("you win, player!")
+    #     continue_playing = False
+    # elif player_score < dealer_score:
+    #     print("you lose player")
+    #     continue_playing = False
+    # elif player_score == dealer_score :
+    #     print("it's a push")
+    #     continue_playing = False
 
 #remainig To Do's: 
 #display only one of the dealers hands at the begining of the game 

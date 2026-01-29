@@ -28,8 +28,15 @@ def calculate_score(hand):
 
 
 # fix this function so it works for both dealer and player 
-def check_for_bust (score):
+def check_for_bust_dealer (score):
     
+     if score > 21:
+          print(f"dealer went over 21, you win")
+          return False
+     else:
+          return True 
+
+def check_for_bust_player (score):
      if score > 21:
           print(f"you went over 21 you lose")
           return False
