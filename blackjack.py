@@ -12,8 +12,6 @@ dealer_score = []
 
 moves.first_deal(player_hand=player_hand, dealer_hand=dealer_hand)
 
-player_hand =[11,9]
-
 player_score = sum(player_hand)
 dealer_score = sum(dealer_hand)
 
@@ -75,6 +73,5 @@ while continue_playing == True:
         continue_playing = False
 
 #remainig To Do's: 
-# make sure than an Ace counts as 11 or 1 depending on the situation 
 #display only one of the dealers hands at the begining of the game 
 #fix check for bust option so that the right message is displayed
