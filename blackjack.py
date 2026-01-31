@@ -57,14 +57,17 @@ while continue_playing == True:
 
 #gotta split the loop here, otherwise, if the player busts, the dealer can still play 
 
-    while dealer_score < 17:
-        #deal another card to dealer
-        moves.hit(hand = dealer_hand)
-        dealer_score = moves.calculate_score(hand=dealer_hand) 
-        print(dealer_hand,dealer_score)
-        continue_playing = moves.check_for_bust_dealer(score = dealer_score)
+while 17 > dealer_score < 21 :
+    #deal another card to dealer
+    moves.hit(hand = dealer_hand)
+    dealer_score = moves.calculate_score(hand=dealer_hand) 
+    print(dealer_hand,dealer_score)
+    #continue_playing = moves.check_for_bust_dealer(score = dealer_score)
 
-# this part needs fine tuninng 
+if dealer_score > 21 : 
+    print("dealer loses")
+    
+    # this part needs fine tuninng 
     # if player_score > dealer_score:
     #     print("you win, player!")
     #     continue_playing = False
