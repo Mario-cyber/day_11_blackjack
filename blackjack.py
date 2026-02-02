@@ -15,10 +15,10 @@ moves.first_deal(player_hand=player_hand, dealer_hand=dealer_hand)
 player_score = sum(player_hand)
 dealer_score = sum(dealer_hand)
 
-print(player_hand, player_score)
 
+print(f"your cards are: {player_hand} and your total is {player_score}")
 
-print(dealer_hand[0])
+print(f"the dealer is showing: {dealer_hand[0]}")
 
 
 
@@ -55,8 +55,8 @@ else:
         moves.hit(hand = dealer_hand)
         dealer_score = moves.calculate_score(hand=dealer_hand) 
         print(dealer_hand,dealer_score)
-        #continue_playing = moves.check_for_bust_dealer(score = dealer_score)
-
+        
+    # comparison logic 
     if dealer_score > 21 : 
         print("dealer wnt over 21, you win!")
     else:
