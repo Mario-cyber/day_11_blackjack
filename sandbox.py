@@ -48,8 +48,11 @@ while continue_playing == True:
         continue_playing = moves.check_for_bust_player(score=player_score)
         print(f"here is what is ahppening here: continue_playing = {continue_playing}")
         if player_score == 21:
-            print("you win, player!")
-            
+            #if you hit 21 you don't immediatly win becasue the 
+            #dealer can still try to tie (push)
+            #also, the user is allowed to hit at 21 if they want ot be stupid enough 
+            print("dealr can still draw")
+
         
     elif another_card == 'n':
         print(player_hand, player_score)
