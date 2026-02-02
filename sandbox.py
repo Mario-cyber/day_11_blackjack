@@ -51,7 +51,7 @@ while continue_playing == True:
             #if you hit 21 you don't immediatly win becasue the 
             #dealer can still try to tie (push)
             #also, the user is allowed to hit at 21 if they want ot be stupid enough 
-            print("dealr can still draw")
+            print("dealer can still draw")
 
         
     elif another_card == 'n':
@@ -59,28 +59,29 @@ while continue_playing == True:
         continue_playing  = False
 
 
-#gotta split the loop here, otherwise, if the player busts, the dealer can still play 
+# If the player busted, don't let the dealer play
+if player_score > 21:
+    # `moves.check_for_bust_player` already prints a message when player busts,
+    # but make the outcome explicit here as well
+    print("You went over 21. Dealer wins.")
+else:
+    # Dealer draws until reaching 17 or higher (standard rule)
+    while dealer_score < 17:
+        moves.hit(hand=dealer_hand)
+        dealer_score = moves.calculate_score(hand=dealer_hand)
+        print(dealer_hand, dealer_score)
 
-while 17 > dealer_score < 21 :
-    #deal another card to dealer
-    moves.hit(hand = dealer_hand)
-    dealer_score = moves.calculate_score(hand=dealer_hand) 
-    print(dealer_hand,dealer_score)
-    #continue_playing = moves.check_for_bust_dealer(score = dealer_score)
-
-if dealer_score > 21 : 
-    print("dealer loses")
-    
-    # this part needs fine tuninng 
-    # if player_score > dealer_score:
-    #     print("you win, player!")
-    #     continue_playing = False
-    # elif player_score < dealer_score:
-    #     print("you lose player")
-    #     continue_playing = False
-    # elif player_score == dealer_score :
-    #     print("it's a push")
-    #     continue_playing = False
+    # Determine final outcome
+    if dealer_score > 21:
+        print("Dealer went over 21. You win! ✅")
+    else:
+        print(f"Final hands:\nPlayer: {player_hand} -> {player_score}\nDealer: {dealer_hand} -> {dealer_score}")
+        if dealer_score > player_score:
+            print("You lose 😞")
+        elif dealer_score < player_score:
+            print("You win! 🎉")
+        else:
+            print("It's a push (tie).")
 
 #remainig To Do's: 
 #display only one of the dealers hands at the begining of the game 
