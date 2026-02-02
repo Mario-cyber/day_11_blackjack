@@ -57,26 +57,35 @@ while continue_playing == True:
 
 #gotta split the loop here, otherwise, if the player busts, the dealer can still play 
 
-while 17 > dealer_score < 21 :
-    #deal another card to dealer
-    moves.hit(hand = dealer_hand)
-    dealer_score = moves.calculate_score(hand=dealer_hand) 
-    print(dealer_hand,dealer_score)
-    #continue_playing = moves.check_for_bust_dealer(score = dealer_score)
+#dealer only plays if the player has not bust 
 
-if dealer_score > 21 : 
-    print("dealer loses")
-    
-    # this part needs fine tuninng 
-    # if player_score > dealer_score:
-    #     print("you win, player!")
-    #     continue_playing = False
-    # elif player_score < dealer_score:
-    #     print("you lose player")
-    #     continue_playing = False
-    # elif player_score == dealer_score :
-    #     print("it's a push")
-    #     continue_playing = False
+if player_score > 21 :
+    print("you lose")
+else:
+    while 17 > dealer_score:
+        #deal another card to dealer
+        moves.hit(hand = dealer_hand)
+        dealer_score = moves.calculate_score(hand=dealer_hand) 
+        print(dealer_hand,dealer_score)
+        #continue_playing = moves.check_for_bust_dealer(score = dealer_score)
+
+    if dealer_score > 21 : 
+        print("dealer wnt over 21, you win!")
+    else:
+        print(f"final score: \n Player: {player_hand}-> {player_score} \nDealer: {dealer_hand} -> {dealer_score}")
+        if dealer_score > player_score:
+            print("you lose !")
+        elif
+        # this part needs fine tuninng 
+        # if player_score > dealer_score:
+        #     print("you win, player!")
+        #     continue_playing = False
+        # elif player_score < dealer_score:
+        #     print("you lose player")
+        #     continue_playing = False
+        # elif player_score == dealer_score :
+        #     print("it's a push")
+        #     continue_playing = False
 
 #remainig To Do's: 
 #display only one of the dealers hands at the begining of the game 
